@@ -43,10 +43,10 @@ module.exports = NodeHelper.create({
 		    
 		    //calculate if page needs to be changed
 		    if (left <= threshold && right >= threshold) {
-			self.sendSocketNotification("PAGE_CHANGED", 0);
+			self.sendSocketNotification("PAGE_DECREMENT");
 			if(debug) (console.log("DECREMENT PAGE"))
 		    } else if (left >= threshold && right <= threshold) {
-			self.sendSocketNotification("PAGE_CHANGED", 1);
+			self.sendSocketNotification("PAGE_INCREMENT");
 			if(debug) (console.log("INCREMENT PAGE"))
 		    }
 		}
